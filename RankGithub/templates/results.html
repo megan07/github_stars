@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Results</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    </head>
+    <body>
+        <div class="winner-label">Winners</div>
+        <div>
+            <div class="width-33 left">
+                <div class="git_name">{{git_1.name}}</div>
+                <div>
+                    <span class="value">{{git_1.url}}</span>
+                </div>
+                <div>
+                    <span class="value {%if git_1.num_watchers >= git_2.num_watchers%} winner {% endif %}">{{git_1.num_watchers}}</span>
+                </div>
+                <div>
+                    <span class="value {%if git_1.num_stars >= git_2.num_stars%} winner {% endif %}">{{git_1.num_stars}}</span>
+                </div>
+                <div>
+                    <span class="value {%if git_1.num_forks >= git_2.num_forks%} winner {% endif %}">{{git_1.num_forks}}</span>
+                </div>
+            </div>
+
+            <div class="width-33 middle">
+                <div class="fill-height"></div>
+                <div class="label">Url</div>
+                <div class="label">Watchers</div>
+                <div class="label">Stars</div>
+                <div class="label">Forks</div>
+            </div>
+
+            <div class="width-33 right">
+                <div class="git_name">{{git_2.name}}</div>
+                <div>
+                    <span class="value">{{git_2.url}}</span>
+                </div>
+                <div>
+                    <span class="value {%if git_2.num_watchers >= git_1.num_watchers%} winner {% endif %}">{{git_2.num_watchers}}</span>
+                </div>
+                <div>
+                    <span class="value {%if git_2.num_watchers >= git_1.num_stars%} winner {% endif %}">{{git_2.num_stars}}</span>
+                </div>
+                <div>
+                    <span class="value {%if git_2.num_watchers >= git_1.num_forks%} winner {% endif %}">{{git_2.num_forks}}</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
