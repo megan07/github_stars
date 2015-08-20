@@ -18,7 +18,7 @@ def get_store_info(url, user, pw):
     results = info.fetch()
 
     repo = Github(name=results['name'], url=url, num_stars=results['stargazers_count'],
-                  num_watchers=results['watchers_count'], num_forks=results['forks_count'])
+                  num_watchers=results['subscribers_count'], num_forks=results['forks_count'])
 
     return repo
 
